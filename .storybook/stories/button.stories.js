@@ -28,3 +28,9 @@ storiesOf('Button', module)
     .add('With submit attribute', () => (
         <Button submit >Domz Garcia</Button>
     ))
+    .add('With submit attribute', () => (
+        <Button submit >Domz Garcia</Button>
+    ))
+    .add('With component attribute', () => (
+        <Button component={<div></div>} >Domz Garcia</Button>
+    ))

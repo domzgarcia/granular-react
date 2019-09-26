@@ -6,7 +6,7 @@ import blacklist from 'blacklist';
 class Button extends PureComponent {
     
     build = (props) => {
-        const {href, type, submit, block, className, children, isActive, size} = props;
+        const {href, type, submit, block, className, children, isActive, size, component} = props;
         let classes = classnames(
             'Button',
             'Button--' + type,
@@ -16,14 +16,19 @@ class Button extends PureComponent {
         );
         // Combine classes
         classes = (className) ? `${classes} ${className}` : classes;
+        
         // Set valid attributes
         let attr = Object.assign({}, props);
-        attr = blacklist(attr, 'submit', 'block', 'className', 'children', 'isActive', 'size');
+        attr = blacklist(attr, 'submit', 'block', 'className', 'children', 'isActive', 'size', 'component');
+        
         // Set type
-        let btype = (submit) ? 'submit' : 'button';
+        let btnType = (submit) ? 'submit' : 'button';
+        
+        console.log('component', component); // ? No idea
+
         // Create element
         if(href) return (<a className={classes} {...attr}> {children} </a>);     
-        return (<button className={classes} {...attr} type={btype}> {children} </button>);
+        return (<button className={classes} {...attr} type={btnType}> {children} </button>);
     }
     render(){
         return this.build(this.props);
