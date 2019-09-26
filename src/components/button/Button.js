@@ -6,19 +6,21 @@ import blacklist from 'blacklist';
 class Button extends PureComponent {
     
     createButton = (props) => {
-        const {type, block, className, children} = props;
+        const {type, block, className, children, isActive, size} = props;
         let classes = classnames(
             'Button',
             'Button--' + type,
             { 'Button--block' : block },
+            { [`Button--${size}`] : size },
+            {'is-active' : isActive}
         );
         
         classes = (className) ? `${classes} ${className}` : classes;
         
         let attr = Object.assign({}, props);
         
-        attr = blacklist(attr, 'className', 'block');
-        
+        attr = blacklist(attr, 'className', 'block', 'isActive', 'size', 'type');
+
         return (
         <button className={classes} {...attr} type="button">
             {children}
