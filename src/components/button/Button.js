@@ -22,12 +22,8 @@ class Button extends PureComponent {
         // Set type
         let btype = (submit) ? 'submit' : 'button';
         // Create element
-        if(href) return <a className={classes} {...attr} {...this.props}>{children}</a>;     
-        return (
-            <button className={classes} {...attr} type={btype}>
-                {children}
-            </button>
-        )
+        if(href) return <a className={classes} {...attr}> {children} </a>;     
+        return <button className={classes} {...attr} type={btype}> {children} </button>
     }
     render(){
         return this.build(this.props);
