@@ -6,6 +6,12 @@ import 'Styles/buttons.scss';
 import 'Common/global.scss';
 
 storiesOf('Button', module)
-    .add('No text', () => (
-        <Button className="red">Boom</Button>
+    .add('Default button', () => (
+        <Button>Domz Garcia</Button>
+    ))
+    .add('With block attribute', () => (
+        <Button block>Domz Garcia</Button>
+    ))
+    .add('With className attribute', () => (
+        <Button className="red">Domz Garcia</Button>
     ))
