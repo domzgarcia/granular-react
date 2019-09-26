@@ -5,8 +5,8 @@ import blacklist from 'blacklist';
 
 class Button extends PureComponent {
     
-    createButton = (props) => {
-        const {type, block, className, children, isActive, size} = props;
+    build = (props) => {
+        const {href, type, submit, block, className, children, isActive, size} = props;
         let classes = classnames(
             'Button',
             'Button--' + type,
@@ -14,30 +14,64 @@ class Button extends PureComponent {
             { [`Button--${size}`] : size },
             {'is-active' : isActive}
         );
-        
+        // Combine classes
         classes = (className) ? `${classes} ${className}` : classes;
-        
+        // Set valid attributes
         let attr = Object.assign({}, props);
-        
-        attr = blacklist(attr, 'className', 'block', 'isActive', 'size', 'type');
-
+        attr = blacklist(attr, 'submit', 'className', 'block', 'isActive', 'size');
+        // Set type
+        let btype = (submit) ? 'submit' : 'button';
+        // Create element
+        if(href) return <a className={classes} {...attr} {...this.props}>{children}</a>;     
         return (
-        <button className={classes} {...attr} type="button">
-            {children}
-        </button>)
+            <button className={classes} {...attr} type={btype}>
+                {children}
+            </button>
+        )
     }
     render(){
-        return this.createButton(this.props);
+        return this.build(this.props);
     }
 }
+
+const BUTTON_SIZES = ['lg', 'sm', 'xs'];
+const BUTTON_TYPES = [
+	'default',
+	'default-primary',
+	'default-success',
+	'default-warning',
+	'default-danger',
+	'hollow-primary',
+	'hollow-success',
+	'hollow-warning',
+	'hollow-danger',
+	'primary',
+	'success',
+	'warning',
+	'danger',
+	'link',
+	'link-text',
+	'link-primary',
+	'link-success',
+	'link-warning',
+	'link-danger',
+	'link-cancel',
+	'link-delete',
+];
 
 Button.defaultProps = {
     type: 'default',
 };
 
 Button.propTypes = {
-    type: PropTypes.string,
     block: PropTypes.bool,
+    className: PropTypes.string,
+    component: PropTypes.element,
+    href: PropTypes.string,
+    isActive: PropTypes.bool,
+    size: PropTypes.oneOf(BUTTON_SIZES),
+    submit: PropTypes.bool,
+    type: PropTypes.oneOf(BUTTON_TYPES),
 };
 
 export default Button;

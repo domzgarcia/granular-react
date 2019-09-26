@@ -22,3 +22,9 @@ storiesOf('Button', module)
     .add('With isActive attribute', () => (
         <Button isActive >Domz Garcia</Button>
     ))
+    .add('With href attribute', () => (
+        <Button type="link-text" href="https://google.com" target="_blank">Domz Garcia</Button>
+    ))
+    .add('With submit attribute', () => (
+        <Button submit >Domz Garcia</Button>
+    ))
