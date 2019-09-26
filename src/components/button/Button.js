@@ -18,12 +18,12 @@ class Button extends PureComponent {
         classes = (className) ? `${classes} ${className}` : classes;
         // Set valid attributes
         let attr = Object.assign({}, props);
-        attr = blacklist(attr, 'submit', 'className', 'block', 'isActive', 'size');
+        attr = blacklist(attr, 'submit', 'block', 'className', 'children', 'isActive', 'size');
         // Set type
         let btype = (submit) ? 'submit' : 'button';
         // Create element
-        if(href) return <a className={classes} {...attr}> {children} </a>;     
-        return <button className={classes} {...attr} type={btype}> {children} </button>
+        if(href) return (<a className={classes} {...attr}> {children} </a>);     
+        return (<button className={classes} {...attr} type={btype}> {children} </button>);
     }
     render(){
         return this.build(this.props);
