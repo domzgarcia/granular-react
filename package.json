@@ -2,7 +2,7 @@
   "name": "granular-react",
   "version": "1.0.0",
   "description": "Yet another UI Toolkit for react apps.",
-  "main": "dist/index.js",
+  "main": "dist/bundle.cjs.js",
   "module": "dist/esm/index.js",
   "scripts": {
     "prebuild": "rimraf dist",
@@ -56,10 +56,14 @@
     "react-dom": "^16.9.0",
     "rollup": "^1.21.4",
     "rollup-plugin-babel": "^4.3.3",
-    "rollup-plugin-node-resolve": "^5.2.0"
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^5.1.2"
   },
-  "dependencies": {
-    "blacklist": "^1.1.4",
-    "classnames": "^2.2.6"
+  "peerDependencies": {
+    "@babel/runtime": ">=7",
+    "prop-types": ">=15",
+    "react": ">=16",
+    "blacklist": ">=1.1",
+    "classnames": ">=2.2"
   }
 }

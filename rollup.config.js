@@ -1,39 +1,36 @@
-// import babel from 'rollup-plugin-babel';
-// const babelOptions = {
-//   babelrc: false,
-//   exclude: 'node_modules/**',
-//   presets: [
-//     [
-//       '@babel/env',
-//       {
-//         "modules": false,
-//         "targets": "node 10"
-//       },
-//     ], '@babel/react'
-//   ],
-//   plugins: [
-//     ["@babel/plugin-proposal-class-properties",
-//       {
-//         "loose": true
-//       }
-//     ]
-//   ]
-// }
+import resolve from 'rollup-plugin-node-resolve';
+import babel from 'rollup-plugin-babel';
+import {
+  terser
+} from 'rollup-plugin-terser';
 
-// export default [{
-//   input: 'src/components/button/Button.jsx',
-//   output: [{
-//       file: 'dist/bundle.cjs.js',
-//       format: 'cjs',
-//     },
-//     {
-//       file: 'dist/bundle.esm.js',
-//       format: 'esm',
-//     }
-//   ],
-//   plugins: [
-//     babel(babelOptions),
-//   ]
-// }]
+const distPath = 'dist';
+const bundleName = 'bundle';
+const babelOpt = {
+  babelrc: false,
+  exclude: 'node_modules/**',
+  presets: ['@babel/env', '@babel/react'],
+  plugins: [
+    ["@babel/plugin-proposal-class-properties",
+      {
+        loose: true
+      }
+    ],
+    "transform-react-remove-prop-types"
+  ]
+}
 
-console.log('rollup');
+export default {
+  input: 'src/components/button/Button.jsx',
+  external: ['react', 'classnames', 'prop-types', 'blacklist'],
+  output: [{
+    file: `${distPath}/${bundleName}.cjs.js`,
+    format: 'cjs'
+  }],
+  plugins: [
+    resolve(),
+    babel(babelOpt),
+    // scss(),
+    terser()
+  ]
+}
