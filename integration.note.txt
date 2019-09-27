@@ -17,3 +17,14 @@ plugins: @babel/plugin-proposal-class-properties (experimental)
 
 PeerDeps
 --------
+
+
+Workspace
+---------
+.vscode > settings.json
+```
+{
+  "editor.formatOnSave": true,
+  "eslint.autoFixOnSave": true
+}
+```
