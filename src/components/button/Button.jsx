@@ -53,12 +53,13 @@ class Button extends PureComponent {
         </a>
       )
     }
+
     return (
       <button className={classes} {...attr} type={btnType}>
         {children}
       </button>
     )
-  };
+  }
 
   render () {
     return this.build(this.props)
