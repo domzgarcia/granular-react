@@ -5,3 +5,10 @@ In Windows
 npm run lint does nothing
 should use npx eslint '**/*.jsx'
 
+Usual Babel deps
+----------------
+presets: @babel/env', '@babel/react
+plugins: @babel/plugin-proposal-class-properties (experimental)
+
+PeerDeps
+--------

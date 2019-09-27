@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "rollup -c",
     "lint:prettier": "prettier-eslint '**/*.jsx' --write",
     "storybook": "start-storybook",
     "lint": "eslint '**/*.jsx'",
@@ -16,12 +18,16 @@
     }
   },
   "lint-staged": {
-    "*.jsx": ["npm run lint:fix", "git add"]
+    "*.jsx": [
+      "npm run lint:fix",
+      "git add"
+    ]
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@storybook/addon-info": "^5.2.1",
     "@storybook/cli": "^5.2.1",
     "@storybook/react": "^5.2.1",
@@ -39,7 +45,10 @@
     "prettier-eslint": "^9.0.0",
     "prettier-eslint-cli": "^5.0.0",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react-dom": "^16.9.0",
+    "rollup": "^1.21.4",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-node-resolve": "^5.2.0"
   },
   "dependencies": {
     "blacklist": "^1.1.4",
