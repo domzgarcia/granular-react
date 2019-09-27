@@ -12,4 +12,4 @@ Object.defineProperty(exports, "Button", {
   }
 });
 
-var _Button = _interopRequireDefault(require("./button/Button"));
+var _Button = _interopRequireDefault(require("./components/button/Button"));

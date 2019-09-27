@@ -2,7 +2,8 @@
   "name": "granular-react",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/components/index.js",
+  "main": "dist/index.js",
+  "module": "dist/esm/index.js",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "run-p compile:*",
