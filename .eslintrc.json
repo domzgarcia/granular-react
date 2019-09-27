@@ -30,9 +30,9 @@
     "no-useless-catch": "off",
     "no-unused-vars": "off",
     "quotes": "off",
-    "no-console": ["warn", {
-      "allow": ["warn", "error"]
-    }],
+    "no-undef": "off",
+    "no-console": "off",
+    "semi": "off",
     "space-before-function-paren": "off"
   }
 }

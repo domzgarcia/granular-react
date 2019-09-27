@@ -45,6 +45,8 @@ class Button extends PureComponent {
     const btnType = submit ? 'submit' : 'button'
     console.log('component', component) // ? No idea
 
+    dd(props)
+
     // Create element
     if (href) {
       return (

@@ -51,7 +51,8 @@ function (_PureComponent) {
 
       var btnType = submit ? 'submit' : 'button';
       console.log('component', component); // ? No idea
-      // Create element
+
+      dd(props); // Create element
 
       if (href) {
         return React.createElement("a", _extends({

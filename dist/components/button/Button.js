@@ -50,7 +50,8 @@ class Button extends _react.PureComponent {
 
       const btnType = submit ? 'submit' : 'button';
       console.log('component', component); // ? No idea
-      // Create element
+
+      dd(props); // Create element
 
       if (href) {
         return _react.default.createElement("a", (0, _extends2.default)({

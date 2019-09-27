@@ -10,9 +10,9 @@
     "compile": "babel src",
     "compile:cjs": "npm run compile -- --out-dir dist",
     "compile:esm": "cross-env NODE_ENV=esm npm run compile -- --out-dir dist/esm",
-    "lint:prettier": "prettier-eslint '**/*.jsx' --write",
+    "lint:prettier": "prettier-eslint '**/*.{js,jsx}' --write",
     "storybook": "start-storybook",
-    "lint": "eslint '**/*.jsx'",
+    "lint": "eslint '**/*.{js,jsx}'",
     "lint:fix": "npm run lint -- --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -22,7 +22,7 @@
     }
   },
   "lint-staged": {
-    "*.jsx": [
+    "*.{jsx,js}": [
       "npm run lint:fix",
       "git add"
     ]
