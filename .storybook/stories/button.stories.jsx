@@ -4,7 +4,6 @@ import Button from 'Components/button/Button'
 
 import 'Styles/buttons.scss'
 import 'Common/global.scss'
-import '../../src/utils/logger'
 
 storiesOf('Button', module)
   .add('Default button', () => <Button size="sm"> Domz Garcia </Button>)
@@ -18,7 +17,7 @@ storiesOf('Button', module)
   .add('With isActive attribute', () => <Button isActive> Domz Garcia </Button>)
   .add('With href attribute', () => (
     <Button type="link-text" href="https://google.com" target="_blank">
-      Domz Garcia{' '}
+      Domz Garcia
     </Button>
   ))
   .add('With submit attribute', () => <Button submit> Domz Garcia </Button>)
@@ -28,6 +27,6 @@ storiesOf('Button', module)
   ))
   .add('With icon', () => (
     <Button>
-      <span> 🔥 </span>Domz Garcia{' '}
+      <span> 🔥 </span>Domz Garcia
     </Button>
   ))
