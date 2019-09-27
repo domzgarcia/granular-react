@@ -1,5 +1,4 @@
 // import babel from 'rollup-plugin-babel';
-
 // const babelOptions = {
 //   babelrc: false,
 //   exclude: 'node_modules/**',
@@ -36,3 +35,5 @@
 //     babel(babelOptions),
 //   ]
 // }]
+
+console.log('rollup');

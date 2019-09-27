@@ -6,7 +6,8 @@
   "module": "dist/esm/index.js",
   "scripts": {
     "prebuild": "rimraf dist",
-    "build": "run-p compile:*",
+    "build": "run-p compile:* bundler",
+    "bundler": "rollup -c",
     "compile": "babel src",
     "compile:cjs": "npm run compile -- --out-dir dist",
     "compile:esm": "cross-env NODE_ENV=esm npm run compile -- --out-dir dist/esm",
