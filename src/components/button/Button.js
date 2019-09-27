@@ -25,7 +25,7 @@ class Button extends PureComponent {
         let btnType = (submit) ? 'submit' : 'button';
         
         console.log('component', component); // ? No idea
-
+        
         // Create element
         if(href) return (<a className={classes} {...attr}> {children} </a>);     
         return (<button className={classes} {...attr} type={btnType}> {children} </button>);

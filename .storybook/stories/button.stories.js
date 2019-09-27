@@ -34,3 +34,6 @@ storiesOf('Button', module)
     .add('With component attribute', () => (
         <Button component={<div></div>} >Domz Garcia</Button>
     ))
+    .add('With icon', () => (
+        <Button><span>🔥</span>Domz Garcia</Button>
+    ))
