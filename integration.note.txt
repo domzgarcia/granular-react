@@ -1,9 +1,14 @@
 https://www.youtube.com/watch?v=O4ZIJgOWj_A&list=PLcCp4mjO-z99IPNCrhEyrZimdUG5QXjPd&index=3
 
-In Windows
+CLI Windows
 ----------
 npm run lint does nothing
 should use npx eslint '**/*.jsx'
+
+Lint Behave as
+--------------
+prettier use Runtime
+eslint use compile time
 
 Usual Babel deps
 ----------------

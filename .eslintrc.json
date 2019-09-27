@@ -29,9 +29,10 @@
     "no-misleading-character-class": "off",
     "no-useless-catch": "off",
     "no-unused-vars": "off",
-    "quotes": ["error", "double"],
+    "quotes": "off",
     "no-console": ["warn", {
       "allow": ["warn", "error"]
-    }]
+    }],
+    "space-before-function-paren": "off"
   }
 }

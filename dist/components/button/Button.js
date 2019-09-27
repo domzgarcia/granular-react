@@ -35,21 +35,21 @@ class Button extends _react.PureComponent {
         size,
         component
       } = props;
-      let classes = (0, _classnames.default)("Button", "Button--" + type, {
-        "Button--block": block
+      let classes = (0, _classnames.default)('Button', 'Button--' + type, {
+        'Button--block': block
       }, {
         [`Button--${size}`]: size
       }, {
-        "is-active": isActive
+        'is-active': isActive
       }); // Combine classes
 
       classes = className ? `${classes} ${className}` : classes; // Set valid attributes
 
       let attr = Object.assign({}, props);
-      attr = (0, _blacklist.default)(attr, "submit", "block", "className", "children", "isActive", "size", "component"); // Set type
+      attr = (0, _blacklist.default)(attr, 'submit', 'block', 'className', 'children', 'isActive', 'size', 'component'); // Set type
 
-      const btnType = submit ? "submit" : "button";
-      console.log("component", component); // ? No idea
+      const btnType = submit ? 'submit' : 'button';
+      console.log('component', component); // ? No idea
       // Create element
 
       if (href) {
@@ -72,10 +72,10 @@ class Button extends _react.PureComponent {
 
 }
 
-const BUTTON_SIZES = process.env.NODE_ENV !== "production" ? ["lg", "sm", "xs"] : {};
-const BUTTON_TYPES = process.env.NODE_ENV !== "production" ? ["default", "default-primary", "default-success", "default-warning", "default-danger", "hollow-primary", "hollow-success", "hollow-warning", "hollow-danger", "primary", "success", "warning", "danger", "link", "link-text", "link-primary", "link-success", "link-warning", "link-danger", "link-cancel", "link-delete"] : {};
+const BUTTON_SIZES = process.env.NODE_ENV !== "production" ? ['lg', 'sm', 'xs'] : {};
+const BUTTON_TYPES = process.env.NODE_ENV !== "production" ? ['default', 'default-primary', 'default-success', 'default-warning', 'default-danger', 'hollow-primary', 'hollow-success', 'hollow-warning', 'hollow-danger', 'primary', 'success', 'warning', 'danger', 'link', 'link-text', 'link-primary', 'link-success', 'link-warning', 'link-danger', 'link-cancel', 'link-delete'] : {};
 Button.defaultProps = {
-  type: "default"
+  type: 'default'
 };
 process.env.NODE_ENV !== "production" ? Button.propTypes = {
   block: _propTypes.default.bool,

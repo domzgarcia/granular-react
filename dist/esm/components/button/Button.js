@@ -5,10 +5,10 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _possibleConstructorReturn from "@babel/runtime/helpers/possibleConstructorReturn";
 import _getPrototypeOf from "@babel/runtime/helpers/getPrototypeOf";
 import _inherits from "@babel/runtime/helpers/inherits";
-import React, { PureComponent } from "react";
-import PropTypes from "prop-types";
-import classnames from "classnames";
-import blacklist from "blacklist";
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
+import blacklist from 'blacklist';
 
 var Button =
 /*#__PURE__*/
@@ -38,19 +38,19 @@ function (_PureComponent) {
           isActive = props.isActive,
           size = props.size,
           component = props.component;
-      var classes = classnames("Button", "Button--" + type, {
-        "Button--block": block
+      var classes = classnames('Button', 'Button--' + type, {
+        'Button--block': block
       }, _defineProperty({}, "Button--".concat(size), size), {
-        "is-active": isActive
+        'is-active': isActive
       }); // Combine classes
 
       classes = className ? "".concat(classes, " ").concat(className) : classes; // Set valid attributes
 
       var attr = Object.assign({}, props);
-      attr = blacklist(attr, "submit", "block", "className", "children", "isActive", "size", "component"); // Set type
+      attr = blacklist(attr, 'submit', 'block', 'className', 'children', 'isActive', 'size', 'component'); // Set type
 
-      var btnType = submit ? "submit" : "button";
-      console.log("component", component); // ? No idea
+      var btnType = submit ? 'submit' : 'button';
+      console.log('component', component); // ? No idea
       // Create element
 
       if (href) {
@@ -79,10 +79,10 @@ function (_PureComponent) {
   return Button;
 }(PureComponent);
 
-var BUTTON_SIZES = process.env.NODE_ENV !== "production" ? ["lg", "sm", "xs"] : {};
-var BUTTON_TYPES = process.env.NODE_ENV !== "production" ? ["default", "default-primary", "default-success", "default-warning", "default-danger", "hollow-primary", "hollow-success", "hollow-warning", "hollow-danger", "primary", "success", "warning", "danger", "link", "link-text", "link-primary", "link-success", "link-warning", "link-danger", "link-cancel", "link-delete"] : {};
+var BUTTON_SIZES = process.env.NODE_ENV !== "production" ? ['lg', 'sm', 'xs'] : {};
+var BUTTON_TYPES = process.env.NODE_ENV !== "production" ? ['default', 'default-primary', 'default-success', 'default-warning', 'default-danger', 'hollow-primary', 'hollow-success', 'hollow-warning', 'hollow-danger', 'primary', 'success', 'warning', 'danger', 'link', 'link-text', 'link-primary', 'link-success', 'link-warning', 'link-danger', 'link-cancel', 'link-delete'] : {};
 Button.defaultProps = {
-  type: "default"
+  type: 'default'
 };
 process.env.NODE_ENV !== "production" ? Button.propTypes = {
   block: PropTypes.bool,

@@ -1,7 +1,7 @@
 {
   "name": "granular-react",
   "version": "1.0.0",
-  "description": "",
+  "description": "Yet another UI Toolkit for react apps.",
   "main": "dist/index.js",
   "module": "dist/esm/index.js",
   "scripts": {
