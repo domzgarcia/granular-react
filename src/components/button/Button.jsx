@@ -1,7 +1,7 @@
-import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
-import classnames from 'classnames'
-import blacklist from 'blacklist'
+import React, { PureComponent } from "react"
+import PropTypes from "prop-types"
+import classnames from "classnames"
+import blacklist from "blacklist"
 
 class Button extends PureComponent {
   build = props => {
@@ -18,11 +18,11 @@ class Button extends PureComponent {
     } = props
 
     let classes = classnames(
-      'Button',
-      'Button--' + type,
-      { 'Button--block': block },
+      "Button",
+      "Button--" + type,
+      { "Button--block": block },
       { [`Button--${size}`]: size },
-      { 'is-active': isActive }
+      { "is-active": isActive }
     )
 
     // Combine classes
@@ -32,18 +32,18 @@ class Button extends PureComponent {
     let attr = Object.assign({}, props)
     attr = blacklist(
       attr,
-      'submit',
-      'block',
-      'className',
-      'children',
-      'isActive',
-      'size',
-      'component'
+      "submit",
+      "block",
+      "className",
+      "children",
+      "isActive",
+      "size",
+      "component"
     )
 
     // Set type
-    const btnType = submit ? 'submit' : 'button'
-    console.log('component', component) // ? No idea
+    const btnType = submit ? "submit" : "button"
+    console.log("component", component) // ? No idea
 
     // Create element
     if (href) {
@@ -61,38 +61,38 @@ class Button extends PureComponent {
     )
   }
 
-  render() {
+  render () {
     return this.build(this.props)
   }
 }
 
-const BUTTON_SIZES = ['lg', 'sm', 'xs']
+const BUTTON_SIZES = ["lg", "sm", "xs"]
 const BUTTON_TYPES = [
-  'default',
-  'default-primary',
-  'default-success',
-  'default-warning',
-  'default-danger',
-  'hollow-primary',
-  'hollow-success',
-  'hollow-warning',
-  'hollow-danger',
-  'primary',
-  'success',
-  'warning',
-  'danger',
-  'link',
-  'link-text',
-  'link-primary',
-  'link-success',
-  'link-warning',
-  'link-danger',
-  'link-cancel',
-  'link-delete'
+  "default",
+  "default-primary",
+  "default-success",
+  "default-warning",
+  "default-danger",
+  "hollow-primary",
+  "hollow-success",
+  "hollow-warning",
+  "hollow-danger",
+  "primary",
+  "success",
+  "warning",
+  "danger",
+  "link",
+  "link-text",
+  "link-primary",
+  "link-success",
+  "link-warning",
+  "link-danger",
+  "link-cancel",
+  "link-delete"
 ]
 
 Button.defaultProps = {
-  type: 'default'
+  type: "default"
 }
 
 Button.propTypes = {
