@@ -61,7 +61,7 @@ class Button extends PureComponent {
     )
   }
 
-  render () {
+  render() {
     return this.build(this.props)
   }
 }
