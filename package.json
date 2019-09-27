@@ -6,7 +6,8 @@
   "scripts": {
     "storybook": "start-storybook",
     "lint": "eslint '**/*.jsx'",
-    "lint:fix": "prettier-eslint '**/*.jsx' --write",
+    "lint:prettier": "prettier-eslint '**/*.jsx' --write",
+    "lint:fix": "npm run lint -- --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "husky": {
