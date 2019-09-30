@@ -2,7 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import Button from 'Components/button/Button'
 
-import 'Styles/buttons.scss'
+import 'Styles/index.scss'
 import 'Common/global.scss'
 
 storiesOf('Button', module)
@@ -23,7 +23,7 @@ storiesOf('Button', module)
   .add('With submit attribute', () => <Button submit> Domz Garcia </Button>)
   .add('With submit attribute', () => <Button submit> Domz Garcia </Button>)
   .add('With component attribute', () => (
-    <Button component={<div> </div>}>Domz Garcia</Button>
+    <Button component={<div>Component_div</div>}>Domz Garcia</Button>
   ))
   .add('With icon', () => (
     <Button>
